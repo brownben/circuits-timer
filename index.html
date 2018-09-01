@@ -10,12 +10,13 @@
     <title>Circuit Timer</title>
 </head>
 
-<body>
+<body id="body">
     <h1>Circuit Timer</h1>
+    <h1 id="sound-error" style="display:none">Sorry your device does not support the playing of sounds</h1>
     <div id="config">
         <div class="selector" id="noOfActivities">
             <h3>Number of Activities</h3>
-            <h2 class="value" id="noOfActivities_value">8</h2>
+            <h2 class="value" id="noOfActivities_value"></h2>
             <div class="buttons">
                 <svg viewBox="0 0 24 24" onClick="changeNoOfActivities(1)">
                     <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
@@ -28,7 +29,7 @@
         </div>
         <div class="selector" id="lenOfActivities">
             <h3>Length of Activities</h3>
-            <h2 class="value" id="lenOfActivities_value">25</h2>
+            <h2 class="value" id="lenOfActivities_value"></h2>
             <div class="buttons">
                 <svg viewBox="0 0 24 24" onClick="changeLengthOfActivities(1)">
                     <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
@@ -41,7 +42,7 @@
         </div>
         <div class="selector" id="lenOfRest">
             <h3>Length of Rest</h3>
-            <h2 class="value" id="lenOfRests_value">10</h2>
+            <h2 class="value" id="lenOfRests_value"></h2>
             <div class="buttons">
                 <svg viewBox="0 0 24 24" onClick="changeLengthOfRests(1)">
                     <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
@@ -53,7 +54,8 @@
         </div>
     </div>
     <div id="timer">
-        <h2 id="currentState">Current State</h2>
+        <h1 id="countdown"></h1>
+        <h2 id="current-state"></h2>
     </div>
     <button id="start" onClick="start()">Start</button>
 

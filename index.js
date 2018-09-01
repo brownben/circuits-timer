@@ -2,14 +2,11 @@
 
 // Set up Initial State for App
 let state = {
-    noOfActivities: 8,
-    lenOfActivities: 25,
-    lenOfRests: 15,
-    currentScreen: 'config',
+    noOfActivities: 2,
+    lenOfActivities: 10,
+    lenOfRests: 5,
+    currentScreen: '',
 }
-document.getElementById('start').innerText = 'Start'
-document.getElementById('config').setAttribute('style', 'display:block')
-document.getElementById('timer').setAttribute('style', 'display:none')
 
 // Define the Buzzer (Web Audio API)
 // If API not Avaliable
@@ -32,6 +29,17 @@ function tone (length) {
     gain.gain.linearRampToValueAtTime(0, audioContext.currentTime + length)
 }
 
+function delay (length) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, length * 1000)
+    })
+}
+
+function playTone (length) {
+    tone(length)
+    return delay(length)
+}
+
 // Update State and Set Values for Time
 
 function updateNoOfActivities () {
@@ -47,16 +55,105 @@ function updateLengthOfRests () {
 }
 
 function changeNoOfActivities (value) {
-    state.noOfActivities += value
-    updateNoOfActivities()
+    if (state.noOfActivities > 1 || value > 0) {
+        state.noOfActivities += value
+        updateNoOfActivities()
+    }
 }
 
 function changeLengthOfActivities (value) {
-    state.lenOfActivities += value
-    updateLengthOfActivities()
+    if (state.lenOfActivities > 1 || value > 0) {
+        state.lenOfActivities += value
+        updateLengthOfActivities()
+    }
 }
 
 function changeLengthOfRests (value) {
-    state.lenOfRests += value
-    updateLengthOfRests()
+    if (state.lenOfRests > 1 || value > 0) {
+        state.lenOfRests += value
+        updateLengthOfRests()
+    }
 }
+
+// Toggle between the Running and the Config Screen
+function changeScreen () {
+    red()
+    if (state.currentScreen === 'config') {
+        document.getElementById('start').innerText = 'Stop'
+        document.getElementById('config').setAttribute('style', 'display:none')
+        document.getElementById('timer').setAttribute('style', 'display:block')
+        state.currentScreen = 'timer'
+        return 'start'
+    }
+    else {
+        document.getElementById('start').innerText = 'Start'
+        document.getElementById('config').setAttribute('style', 'display:block')
+        document.getElementById('timer').setAttribute('style', 'display:none')
+        state.currentScreen = 'config'
+        return 'stop'
+    }
+}
+
+// Start
+function start () {
+    if (changeScreen() === 'start') {
+        state.activitiesRemaining = state.noOfActivities - 1
+        activity()
+    }
+}
+
+function countdown (length) {
+    document.getElementById('countdown').innerText = ''
+    return counterReduce(length)
+        .then((a) => {
+            if (a === 0) return new Promise(function (resolve) { resolve(a) })
+        })
+}
+
+function counterReduce (counter) {
+    return delay(1)
+        .then(() => {
+            document.getElementById('countdown').innerText = counter
+            if (counter === 0) return new Promise(function (resolve) { resolve(0) })
+            else return counterReduce(counter - 1)
+        })
+}
+
+function activity () {
+    if (state.currentScreen === 'timer') {
+        playTone(1)
+            .then(() => {
+                green()
+                return countdown(state.lenOfActivities)
+            })
+            .then(() => playTone(1))
+            .then(() => {
+                red()
+                return countdown(state.lenOfRests)
+            })
+            .then(() => {
+                state.activitiesRemaining -= 1
+                if (state.activitiesRemaining >= 0) activity()
+                else {
+                    playTone(1)
+                    changeScreen()
+                }
+            })
+    }
+}
+
+function green () {
+    document.getElementById('body').setAttribute('style', 'background-color:#00C853')
+    document.getElementById('current-state').innerText = 'Activity'
+}
+
+function red () {
+    document.getElementById('body').setAttribute('style', 'background-color:#F44336')
+    document.getElementById('current-state').innerText = 'Rest'
+}
+
+// Apply State to UI
+changeScreen()
+updateNoOfActivities()
+updateLengthOfActivities()
+updateLengthOfRests()
