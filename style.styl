@@ -1,0 +1,98 @@
+no-select()
+    user-select: none
+    -moz-user-select: none
+    -webkit-user-select: none
+
+body
+    display:inline-block
+    width:90%
+    margin:0 5%
+    color:white
+    background-color:#F44336
+    text-align:center
+    font-family:Audiowide
+
+h1
+    font-size:4rem
+    margin:15px
+    no-select()
+
+h2.value
+    display:inline-block
+    verical-align:top
+    width:200px
+    height:150px
+    margin:0
+    font-size:8rem
+    no-select()
+
+h3
+    font-size:2rem
+    width:400px
+    text-align:left
+    no-select()
+
+svg
+    display:block
+    height:50px
+    width:50px
+    padding:0
+    fill:#fff
+    transition:.5s
+    no-select()
+
+    &:first-child
+        margin-top:25px
+
+    &:hover
+        fill:#fffa
+
+button#start
+    display:block
+    height:auto
+    width:auto
+    margin:10px auto 20px auto
+    padding:5px 15px
+    border:1px solid white
+    outline:0
+    color:white
+    background-color:#fff0
+    font-family:Audiowide
+    font-size:2rem
+    transition:.5s
+    no-select()
+    &:hover
+        background-color:#fff5
+
+.selector
+    height:auto
+    margin:10px auto
+    display:inline-flex
+    align-items: center
+
+.buttons
+    display:inline-block
+    vertical-align:top
+    margin-left:20px
+    height:150px
+
+@media (max-width:800px)
+    .selector
+        display:inline-block
+        width:auto
+
+    h3
+        text-align:center
+        width:auto
+        margin:10px
+
+    h2.value
+        width:auto
+
+    button#start
+        width:100%
+        padding:10px 15px
+
+@media(min-width:1490px)
+    .selector
+        margin:10px 100px
