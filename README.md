@@ -1,7 +1,7 @@
-<img src="9.png" height="50px">
+<img src="logo.png" height="60px">
 
 # Circuits Timer
 
-A timer for use in circuit training which beeps and shows a countdown indicating how much longer there is in the current activity. Built using Promises and the Web Audio API with Vanilla JS, HTML and Stylus.
+A timer for circuit training which beeps and displays a countdown for how much longer there is left in the current activity. Built using Promises and the Web Audio API with Vanilla JS, HTML and Stylus.
 
-A demo of the app is available at https://bonalybob.github.io/circuits-timer
+A demo of the app is available at https://bonalybob.github.io/circuits-timer/
