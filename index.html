@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    <title>Circuit Timer</title>
+</head>
+
+<body>
+    <h1>Circuit Timer</h1>
+    <div id="config">
+        <div class="selector" id="noOfActivities">
+            <h3>Number of Activities</h3>
+            <h2 class="value" id="noOfActivities_value">8</h2>
+            <div class="buttons">
+                <svg viewBox="0 0 24 24" onClick="changeNoOfActivities(1)">
+                    <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
+                </svg>
+                <svg viewBox="0 0 24 24" onClick="changeNoOfActivities(-1)">
+                    <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
+                </svg>
+            </div>
+
+        </div>
+        <div class="selector" id="lenOfActivities">
+            <h3>Length of Activities</h3>
+            <h2 class="value" id="lenOfActivities_value">25</h2>
+            <div class="buttons">
+                <svg viewBox="0 0 24 24" onClick="changeLengthOfActivities(1)">
+                    <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
+                </svg>
+                <svg viewBox="0 0 24 24" onClick="changeLengthOfActivities(-1)">
+                    <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
+                </svg>
+            </div>
+
+        </div>
+        <div class="selector" id="lenOfRest">
+            <h3>Length of Rest</h3>
+            <h2 class="value" id="lenOfRests_value">10</h2>
+            <div class="buttons">
+                <svg viewBox="0 0 24 24" onClick="changeLengthOfRests(1)">
+                    <path d="M7.41,15.41L12,10.83l4.59,4.58L18,14l-6-6l-6,6L7.41,15.41z" />
+                </svg>
+                <svg viewBox="0 0 24 24" onClick="changeLengthOfRests(-1)">
+                    <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div id="timer">
+        <h2 id="currentState">Current State</h2>
+    </div>
+    <button id="start" onClick="start()">Start</button>
+
+</body>
+<script src="./index.js"></script>
+
+</html>
