@@ -11,9 +11,7 @@ let state = {
 // Define the Buzzer (Web Audio API)
 // If API not Avaliable
 let audioContext = new (window.AudioContext || window.webkitAudioContext || false)()
-if (!audioContext) {
-    document.getElementById('sound-error').setAttribute('style', 'display:block')
-}
+if (!audioContext) document.getElementById('sound-error').setAttribute('style', 'display:block')
 
 let oscillator = audioContext.createOscillator()
 oscillator.type = 'triangle'
@@ -40,8 +38,25 @@ function playTone (length) {
     return delay(length)
 }
 
-// Update State and Set Values for Time
+// Countdown
+function countdown (length) {
+    document.getElementById('countdown').innerText = ''
+    return counterReduce(length)
+        .then((a) => {
+            if (a === 0) return new Promise(function (resolve) { resolve(a) })
+        })
+}
 
+function counterReduce (counter) {
+    return delay(1)
+        .then(() => {
+            document.getElementById('countdown').innerText = counter
+            if (counter === 0) return new Promise(function (resolve) { resolve(0) })
+            else return counterReduce(counter - 1)
+        })
+}
+
+// Update State and Set Values for Time
 function updateNoOfActivities () {
     document.getElementById('noOfActivities_value').innerText = state.noOfActivities
 }
@@ -102,23 +117,7 @@ function start () {
     }
 }
 
-function countdown (length) {
-    document.getElementById('countdown').innerText = ''
-    return counterReduce(length)
-        .then((a) => {
-            if (a === 0) return new Promise(function (resolve) { resolve(a) })
-        })
-}
-
-function counterReduce (counter) {
-    return delay(1)
-        .then(() => {
-            document.getElementById('countdown').innerText = counter
-            if (counter === 0) return new Promise(function (resolve) { resolve(0) })
-            else return counterReduce(counter - 1)
-        })
-}
-
+// Set actions happening
 function activity () {
     if (state.currentScreen === 'timer') {
         playTone(1)
@@ -142,6 +141,7 @@ function activity () {
     }
 }
 
+// Change color of Background Depending on what Zone is currently running
 function green () {
     document.getElementById('body').setAttribute('style', 'background-color:#00C853')
     document.getElementById('current-state').innerText = 'Activity'
