@@ -2,12 +2,12 @@ self.addEventListener('install', function (e) {
     e.waitUntil(
         caches.open('circuits').then(function (cache) {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/logo.png',
-                '/index.js',
-                '/style.css',
-                '/style.css.map',
+                './',
+                './index.html',
+                './logo.png',
+                './index.js',
+                './style.css',
+                './style.css.map',
             ])
         })
     )
