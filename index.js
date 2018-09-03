@@ -122,20 +122,30 @@ function activity () {
     if (state.currentScreen === 'timer') {
         playTone(1)
             .then(() => {
-                green()
-                return countdown(state.lenOfActivities)
-            })
-            .then(() => playTone(1))
-            .then(() => {
-                red()
-                return countdown(state.lenOfRests)
+                if (state.currentScreen === 'timer') {
+                    green()
+                    return countdown(state.lenOfActivities)
+                }
             })
             .then(() => {
-                state.activitiesRemaining -= 1
-                if (state.activitiesRemaining >= 0) activity()
-                else {
+                if (state.currentScreen === 'timer') {
                     playTone(1)
-                    changeScreen()
+                }
+            })
+            .then(() => {
+                if (state.currentScreen === 'timer') {
+                    red()
+                    return countdown(state.lenOfRests)
+                }
+            })
+            .then(() => {
+                if (state.currentScreen === 'timer') {
+                    state.activitiesRemaining -= 1
+                    if (state.activitiesRemaining >= 0) activity()
+                    else {
+                        playTone(1)
+                        changeScreen()
+                    }
                 }
             })
     }
