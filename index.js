@@ -2,9 +2,9 @@
 
 // Set up Initial State for App
 let state = {
-    noOfActivities: 2,
-    lenOfActivities: 10,
-    lenOfRests: 5,
+    noOfActivities: 8,
+    lenOfActivities: 25,
+    lenOfRests: 10,
     currentScreen: '',
 }
 
