@@ -2,12 +2,12 @@
     "name": "Circuits Timer",
     "short_name": "Circuits",
     "display": "standalone",
-    "start_url": "/",
+    "start_url": "./",
     "theme_color": "#F44336",
     "background_color": "#F44336",
     "icons": [
         {
-            "src": "logo.png",
+            "src": "./logo.png",
             "type": "image/png"
         }
     ]
