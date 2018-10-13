@@ -1,6 +1,6 @@
 self.addEventListener('install', function (e) {
     e.waitUntil(
-        caches.open('circuits').then(function (cache) {
+        caches.open('circuits-1').then(function (cache) {
             return cache.addAll([
                 './',
                 './index.html',
