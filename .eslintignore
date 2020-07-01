@@ -1,0 +1,8 @@
+./build/
+./config/
+./dist/
+**/coverage/**
+./node-modules/
+*.css
+*.md
+*.json
