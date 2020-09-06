@@ -12,7 +12,7 @@
         :value="value"
         :style="`width: ${value.toString().length + 1}ch`"
         type="number"
-        class="block h-32 max-w-full px-2 mx-4 mb-8 text-center transition-all duration-300 ease-in-out bg-transparent border-white outline-none appearance-none font-display text-10xl focus:border-b active:border-b"
+        class="block h-32 max-w-full px-2 mx-4 mb-8 text-center transition-all duration-300 ease-in-out bg-transparent border-white outline-none appearance-none font-display text-10xl focus:border-b focus:outline-none"
         min="0"
         max="9999"
         @input="emit($event.target.value)"
@@ -21,7 +21,7 @@
       <div class="block h-32">
         <button
           :aria-label="`${label} - Increase - (${increment})`"
-          class="block h-12"
+          class="block h-12 outline-none focus:outline-none"
           tabindex="-1"
           @click.prevent="emit(value + increment)"
         >
@@ -40,7 +40,7 @@
         </button>
         <button
           :aria-label="`${label} - Decrease - (${increment})`"
-          class="block h-12"
+          class="block h-12 outline-none focus:outline-none"
           tabindex="-1"
           @click.prevent="emit(value - increment)"
         >

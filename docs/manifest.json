@@ -76,9 +76,8 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#E53E3E",
-  "description": "Circuits Timer - Run Circuit Timing Easily",
-  "scope": "/circuits-timer/"
+  "description": "Circuits Timer - Run Circuit Training Easily"
 }

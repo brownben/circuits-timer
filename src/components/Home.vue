@@ -21,7 +21,7 @@
     />
 
     <button
-      class="mb-4 text-xl transition-all duration-500 rounded-full font-display hover:bg-red-500 focus:bg-red-500 active:bg-red-500"
+      class="mb-4 text-xl transition-all duration-500 rounded-full font-display hover:bg-red-500 focus:bg-red-500 outline-none focus:outline-none"
       aria-label="Start"
       @click="start"
     >

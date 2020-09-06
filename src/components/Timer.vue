@@ -17,7 +17,7 @@
     </div>
 
     <div
-      class="w-10/12 pt-6 pb-8 select-none sm:w-3/4 sm:w-2/3 md:pb-16 lg:w-1/2 xl:w-1/3"
+      class="w-10/12 pt-6 pb-8 select-none sm:w-3/4 sm:w-2/3 md:pb-16 lg:w-1/2 xl:w-1/3 "
     >
       <svg class="flex-grow text-white fill-current" :viewBox="textViewBox">
         <text class="font-display" x="50%" y="12">
@@ -27,7 +27,7 @@
     </div>
     <div>
       <button
-        class="mx-6 text-xl transition-all duration-500 rounded-full font-display"
+        class="mx-6 text-xl transition-all duration-500 rounded-full font-display outline-none focus:outline-none"
         :class="{
           'hover:bg-red-500': currentStage === 'pause',
           'hover:bg-green-500': currentStage !== 'pause',
@@ -47,7 +47,7 @@
         />
       </button>
       <button
-        class="mx-6 text-xl transition-all duration-500 rounded-full font-display"
+        class="mx-6 text-xl transition-all duration-500 rounded-full font-display outline-none focus:outline-none"
         :class="{
           'hover:bg-red-500': currentStage === 'pause',
           'hover:bg-green-500': currentStage !== 'pause',
