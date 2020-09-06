@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   fill="none"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="logo.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="960"
+     inkscape:window-height="1057"
+     id="namedview8"
+     showgrid="false"
+     inkscape:zoom="0.4609375"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg6" />
+  <rect
+     width="512"
+     height="512"
+     fill="#E53E3E"
+     id="rect2"
+     inkscape:export-filename="C:\Users\Ben\Documents\circuits-timer\public\Logo-16.png"
+     inkscape:export-xdpi="3"
+     inkscape:export-ydpi="3" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M256 431C302.413 431 346.925 412.563 379.744 379.744C412.563 346.925 431 302.413 431 256C431 209.587 412.563 165.075 379.744 132.256C346.925 99.4375 302.413 81 256 81C209.587 81 165.075 99.4375 132.256 132.256C99.4375 165.075 81 209.587 81 256C81 302.413 99.4375 346.925 132.256 379.744C165.075 412.563 209.587 431 256 431V431ZM246.266 194.05C242.971 191.852 239.142 190.59 235.186 190.397C231.231 190.205 227.297 191.091 223.805 192.959C220.313 194.827 217.394 197.609 215.359 201.006C213.324 204.404 212.249 208.29 212.25 212.25V299.75C212.249 303.71 213.324 307.597 215.359 310.994C217.394 314.391 220.313 317.173 223.805 319.041C227.297 320.909 231.231 321.795 235.186 321.603C239.142 321.41 242.971 320.148 246.266 317.95L311.891 274.2C314.887 272.202 317.343 269.496 319.042 266.321C320.741 263.146 321.63 259.601 321.63 256C321.63 252.399 320.741 248.854 319.042 245.679C317.343 242.504 314.887 239.798 311.891 237.8L246.266 194.05V194.05Z"
+     fill="white"
+     id="path4"
+     inkscape:export-filename="C:\Users\Ben\Documents\circuits-timer\public\Logo-16.png"
+     inkscape:export-xdpi="3"
+     inkscape:export-ydpi="3" />
+</svg>
