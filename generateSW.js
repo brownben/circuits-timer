@@ -1,7 +1,7 @@
 const { generateSW } = require('rollup-plugin-workbox')
 
 generateSW({
-  swDest: '../docs/service-worker.js',
+  swDest: './docs/service-worker.js',
   globDirectory: './docs',
   globPatterns: ['**/*.{html,json,js,css,woff2,png,svg,txt}'],
 
