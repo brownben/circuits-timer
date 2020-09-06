@@ -1,7 +1,7 @@
 {
   "name": "Circuits Timer",
   "short_name": "Circuits Timer",
-  "theme_color": "E53E3E",
+  "theme_color": "#E53E3E",
   "icons": [
     {
       "src": "/circuits-timer/Logo-16.png",
@@ -76,7 +76,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/circuits-timer",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#E53E3E",
   "description": "Circuits Timer - Run Circuit Timing Easily",
